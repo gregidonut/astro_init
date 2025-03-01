@@ -52,7 +52,7 @@ main() {
     es=$es+1
     sed -i -E 's|("extends": ".*)strict(".*)|\1strictest\2|' ./tsconfig.json &&
         sed -i 's/favicon\.svg/sword\.svg/g' ./src/layouts/Layout.astro &&
-        echo "changed tsconfig"
+        echo "changed some other things"
 
     es=$es+1
     rm README.md &&
