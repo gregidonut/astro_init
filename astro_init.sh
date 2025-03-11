@@ -36,7 +36,7 @@ main() {
         echo "done installing basic packages"
 
     es=$es+1
-    bunx astro add astro-compressor &&
+    printf '\n' | bunx astro add astro-compressor --yes &&
         echo "added integration package"
 
     es=$es+1
