@@ -22,7 +22,7 @@ main() {
     echo "thank you for using astro_init.sh"
 
     es=$es+1
-    bun create astro@latest -- --template minimal . &&
+    bun create astro@latest -- --template minimal . --install --no-git &&
         echo "done installing astro"
 
     es=$es+1
