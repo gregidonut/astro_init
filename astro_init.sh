@@ -71,7 +71,7 @@ main() {
 }
 
 try main || catch &&
-    if ! tmux ls | grep -q "astro_dev"; then
+    if ! tmux has-session -t astro_dev; then
         {
             tmux new-session -d -s astro_dev "bun run dev"
             exit 0
