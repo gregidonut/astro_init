@@ -50,14 +50,24 @@ main() {
         echo "moved some stuff"
 
     es=$es+1
-    sed -i -E 's|("extends": ".*)strict(".*)|\1strictest\2|' ./tsconfig.json &&
-        sed -i 's/favicon\.svg/sword\.svg/g' ./src/layouts/Layout.astro &&
-        echo "changed some other things"
+    cat tsconfig.json |
+        jq --indent 4 \
+            '.extends = "astro/tsconfigs/strictest" | 
+            . += {
+                "compilerOptions": {
+                    "baseUrl": ".",
+                    "paths": {
+                        "@/*": ["src/*"]
+                    }
+                }
+            }' >new_tsconfig.json &&
+        mv new_tsconfig.json tsconfig.json &&
+        bunx prettier --write tsconfig.json &&
+        echo "changed tsconfig"
 
     es=$es+1
     rm README.md &&
         echo "deleted readme"
-
 }
 
 try main || catch &&
