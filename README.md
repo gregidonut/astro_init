@@ -17,8 +17,9 @@ env ASTRO_INIT__SOURCE_ROOT_PATH=path/to/dir astro_init.sh
 it does not have a default, it should just error if
 it can't find the path dir
 
-oh, and it also requires `tmux` to run the dev server in
-and `bun` for the runtime
+- `jq` & `sed` for some parsing
+- `tmux` to run the dev server in
+- `bun` for the js runtime
 
 ## road map
 
