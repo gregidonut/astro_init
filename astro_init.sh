@@ -66,6 +66,13 @@ main() {
         echo "changed tsconfig"
 
     es=$es+1
+    sed -i 's/favicon\.svg/sword\.svg/g' ./src/layouts/Layout.astro &&
+        sed -i "s/Astro\ Basics/$(bun \
+            -e "console.log(require('./package.json').name)")/g" \
+            ./src/layouts/Layout.astro &&
+        echo "sed on Layout.astro"
+
+    es=$es+1
     rm README.md &&
         echo "deleted readme"
 }
