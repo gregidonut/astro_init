@@ -26,7 +26,7 @@ main() {
         echo "done installing astro"
 
     es=$es+1
-    bun install --save-dev \
+    bun add --dev \
         eslint eslint-plugin-astro \
         @typescript-eslint/parser \
         prettier \
